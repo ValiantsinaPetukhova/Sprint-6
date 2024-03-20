@@ -42,3 +42,8 @@ class BasePage:
 
     def go_to_the_new_window(self):
         self.driver.switch_to.window(self.driver.window_handles[-1])
+
+    @allure.step('Проверяем видимость элемента')
+    def check_visibility_of_element(self, locator):
+        element = WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(locator))
+        return element.is_displayed()

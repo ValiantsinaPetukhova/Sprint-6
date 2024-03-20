@@ -10,8 +10,5 @@ class HeaderPage(BasePage):
         self.click_to_element_with_wait(locator_order)
         self.click_to_element_with_wait(locator_scooter)
 
-    @allure.step('Проверяем видимость элемента')
-    def check_visibility_of_element(self, locator):
-        element = WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(locator))
-        return element.is_displayed()
+
 
