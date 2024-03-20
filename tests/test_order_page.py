@@ -27,7 +27,7 @@ class TestOrderPage:
         main_page.scroll_to_the_middle_of_the_page()
         main_page.click_to_the_middle_order_button()
         order_page = OrderPage(driver)
-        order_page.set_order( TestData.NAME_2, TestData.LAST_NAME_2, TestData.ADDRESS_2,
+        order_page.set_order(TestData.NAME_2, TestData.LAST_NAME_2, TestData.ADDRESS_2,
                               OrderPageLocators.METRO_STATION_TWO_LOCATOR, TestData.PHONE_2,
                               OrderPageLocators.RENT_DAY_AFTER_TOMORROW_LOCATOR,
                               OrderPageLocators.RENTAL_PERIOD_THREE_DAYS_LOCATOR,

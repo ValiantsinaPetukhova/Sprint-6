@@ -1,6 +1,6 @@
 import allure
 
-from locators.base_page_locators import BasePageLocators
+from locators.common_locators import CommonLocators
 from locators.header_page_locators import HeaderPageLocators
 from locators.main_page_locators import MainPageLocators
 from pages.base_page import BasePage
@@ -19,7 +19,7 @@ class HeaderPage(BasePage):
         self.click_to_element_with_wait(HeaderPageLocators.YANDEX_LOGO)
 
     def check_dzen_page_is_open(self):
-        return self.check_visibility_of_element(BasePageLocators.DZEN_HEADER_LOCATOR)
+        return self.check_visibility_of_element(CommonLocators.DZEN_HEADER_LOCATOR)
 
 
 
