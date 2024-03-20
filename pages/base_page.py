@@ -39,3 +39,6 @@ class BasePage:
         element = WebDriverWait(self.driver, 10).until(
             EC.presence_of_element_located(locator))
         self.driver.execute_script("arguments[0].scrollIntoView(true);", element)
+
+    def go_to_the_new_window(self):
+        self.driver.switch_to.window(self.driver.window_handles[-1])

@@ -20,5 +20,5 @@ class TestHeaderPage:
         header_page = HeaderPage(driver)
         header_page.accept_cookies(BasePageLocators.COOKIES_BUTTON)
         header_page.click_to_element_with_wait(HeaderPageLocators.YANDEX_LOGO)
-        driver.switch_to.window(driver.window_handles[-1])
+        header_page.go_to_the_new_window()
         assert header_page.check_visibility_of_element(BasePageLocators.DZEN_HEADER_LOCATOR)
