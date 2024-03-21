@@ -23,8 +23,4 @@ class TestMainPage:
     def test_questions_and_answers(self, driver, num, result):
         main_page = MainPage(driver)
         main_page.accept_cookies()
-        assert main_page.get_answer_text(
-            MainPageLocators.QUESTION_LOCATOR,
-            MainPageLocators.ANSWER_LOCATOR,
-            num
-        ) == result
+        assert main_page.get_answer_text(num) == result
