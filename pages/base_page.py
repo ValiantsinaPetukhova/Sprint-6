@@ -2,17 +2,15 @@ import allure
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-from locators.common_locators import CommonLocators
-
 
 class BasePage:
     def __init__(self, driver):
         self.driver = driver
 
     @allure.step('Соглашаемся с куками')
-    def accept_cookies(self):
+    def accept_cookies(self, locator):
         try:
-            cookie_button = WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable((CommonLocators.COOKIES_BUTTON)))
+            cookie_button = WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable((locator)))
             cookie_button.click()
         except:
             pass
@@ -35,12 +33,6 @@ class BasePage:
         method, locator = locator_raw
         locator = locator.format(num)
         return (method, locator)
-
-    @allure.step('Прокручиваем страницу до элемента')
-    def scroll_to_the_element(self, locator):
-        element = WebDriverWait(self.driver, 10).until(
-            EC.presence_of_element_located(locator))
-        self.driver.execute_script("arguments[0].scrollIntoView(true);", element)
 
     def go_to_the_new_window(self):
         self.driver.switch_to.window(self.driver.window_handles[-1])

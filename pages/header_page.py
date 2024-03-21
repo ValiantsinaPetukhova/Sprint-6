@@ -21,5 +21,8 @@ class HeaderPage(BasePage):
     def check_dzen_page_is_open(self):
         return self.check_visibility_of_element(CommonLocators.DZEN_HEADER_LOCATOR)
 
+    def acception_cookies(self):
+        self.accept_cookies(CommonLocators.COOKIES_BUTTON)
+
 
 

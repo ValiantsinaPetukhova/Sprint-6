@@ -25,7 +25,6 @@ class OrderPageLocators:
     CONFIRMATION_FORM_LOCATOR = By.XPATH, '//div[text()="Хотите оформить заказ?"]'
     CONFIRMATION_BUTTON_LOCATOR = By.XPATH, '//button[contains(@class, "Button_Middle__1CSJM") and text() = "Да"]'
     ORDER_PLACED_LOCATOR = By.XPATH, '//div[text()="Заказ оформлен"]'
-    CHECK_STATUS_LOCATOR = By.XPATH, '//button[contains(@class, "Button_Middle__1CSJM") and text() = "Посмотреть статус"]'
 
 
 
